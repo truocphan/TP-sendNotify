@@ -2,11 +2,11 @@ import setuptools
 
 setuptools.setup(
 	name="TP-sendNotify",
-	version="2024.8.24",
+	version="2024.8.25",
 	author="TP Cyber Security",
 	license="MIT",
 	author_email="tpcybersec2023@gmail.com",
-	description="",
+	description="Sending message notification to Discord",
 	long_description=open("README.md").read(),
 	long_description_content_type="text/markdown",
 	install_requires=open("requirements.txt").read().split(),
