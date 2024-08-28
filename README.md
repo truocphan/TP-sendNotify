@@ -27,18 +27,33 @@ The default configuration file created at `~/.TPConfig/sendNotify.json` has the 
 ```json
 {
     "Discord": {
-        "BOT_NAME": {
-            "webhook_url": "https://discord.com/api/webhooks/WEBHOOK_ID/WEBHOOK_TOKEN"
+        "<BOT_NAME>": {
+            "WEBHOOK-URL": "https://discord.com/api/webhooks/<WEBHOOK_ID>/<WEBHOOK_TOKEN>"
+        },
+        ...
+    },
+    "Telegram": {
+        "<BOT_NAME>": {
+            "BOT-TOKEN": "<BOT_TOKEN>",
+            "CHANNEL-USERNAME": "<CHANNEL_USERNAME>"
         },
         ...
     }
 }
 ```
 
-### toDiscord(bot_name, message, SidebarColor=None, ConfigFile=None)
-Sending message notification to Discord channel
+### toDiscord(bot_name, message, SidebarColor=0xcc0500, ConfigFile=None)
+Sending message notification to Discord
 ```python
 import TP_sendNotify
 
-TP_sendNotify.toDiscord("BOT_NAME", "This message notification has been sent to the Discord channel using TP-sendNotify", SidebarColor=13370624)
+TP_sendNotify.toDiscord("<BOT_NAME>", "This message notification has been sent to the Discord using TP-sendNotify")
+```
+
+### toTelegram(bot_name, message, MessageFormat=None, ConfigFile=None)
+Sending message notification to Telegram
+```python
+import TP_sendNotify
+
+TP_sendNotify.toTelegram("<BOT_NAME>", "This message notification has been sent to the Telegram using TP-sendNotify")
 ```
