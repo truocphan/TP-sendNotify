@@ -23,7 +23,7 @@ python setup.py install
 ```
 
 ## Basic Usage
-The default configuration file created at `~/.TPConfig/sendNotify.json` has the following content:
+The default configuration file created at `~/.TPConfig/TP-sendNotify/sendNotify.json` has the following content:
 ```json
 {
     "Discord": {
@@ -36,6 +36,12 @@ The default configuration file created at `~/.TPConfig/sendNotify.json` has the 
         "<BOT_NAME>": {
             "BOT-TOKEN": "<BOT_TOKEN>",
             "CHANNEL-USERNAME": "<CHANNEL_USERNAME>"
+        },
+        ...
+    },
+    "Slack": {
+        "<BOT_NAME>": {
+            "WEBHOOK-URL": "https://hooks.slack.com/services/<WORKSPACE_ID>/<CHANNEL_ID>/<TOKEN>"
         },
         ...
     }
@@ -56,4 +62,12 @@ Sending message notification to Telegram
 import TP_sendNotify
 
 TP_sendNotify.toTelegram("<BOT_NAME>", "This message notification has been sent to the Telegram using TP-sendNotify")
+```
+
+### toSlack(bot_name, message, ConfigFile=None)
+Sending message notification to Slack
+```python
+import TP_sendNotify
+
+TP_sendNotify.toSlack("<BOT_NAME>", "This message notification has been sent to the Slack using TP-sendNotify")
 ```
